@@ -63,7 +63,7 @@ gulp.task('css', function() {
   .pipe(autoprefixer({
     overrideBrowserslist: 'last 2 versions'
   }))
-  //.pipe(cssmin())
+  .pipe(cssmin())
   .pipe(gulp.dest(paths.dest + '/css'))
 });
 
