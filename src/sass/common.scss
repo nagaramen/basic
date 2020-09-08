@@ -1,0 +1,1311 @@
+@charset "UTF-8";
+
+$white: #fff;
+$light: #f5f5f5;
+$gray: #aaa;
+$deep: #888;
+$black: #000;
+$orange: #ff8040;
+$light-orange: #ffc090;
+$cyan: #40c0dc;
+$light-cyan: #80e0d0;
+$pink: #ffe0e0;
+$purple: #b0b0ff;
+$salmon: #ff6080;
+$margin: 2.0rem;
+$section-margin: 8.0rem;
+
+$h1: 4.8rem;
+$h2: 3.2rem;
+$h3: 2.4rem;
+$h4: 2.0rem;
+$p: 1.6rem;
+$c: 1.3rem;
+
+$hot-gradient: linear-gradient(90deg, $orange 0%, $light-orange 100%);
+$cool-gradient: linear-gradient(90deg, $cyan 0%, $light-cyan 100%);
+$pale-gradient: linear-gradient(90deg, $pink 0%, $light-orange 100%);
+
+.loading {
+  transition: 0 !important;
+}
+
+.pc-none {
+  display: none;
+}
+
+@font-face {
+  font-family: "Zapfino";
+  src: url("../font/Zapfino.eot");
+  src: url("../font/Zapfino.eot?#iefix") format("embedded-opentype"),
+  url("../font/Zapfino.woff") format("woff"),
+  url("../font/Zapfino.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes trans {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@mixin gothic {
+  font-family:  "游ゴシック", "Yu Gothic", YuGothic, "游ゴシック体", a-otf-futo-go-b101-pr6n, "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  font-weight: 600;
+  font-feature-settings: initial;
+}
+
+@mixin mincho {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  font-feature-settings: "palt";
+}
+
+@mixin zapfino {
+  font-family: "Zapfino", serif;
+  font-weight: normal;
+  font-feature-settings: "palt";
+}
+
+@mixin vertical-mincho {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, a-otf-ryumin-pr6n, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: normal;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+
+@mixin clearfix {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@mixin shadow {
+  box-shadow: 0 1.0rem 1.0rem $deep;
+}
+
+html {
+  @include gothic;
+
+  font-size: 56.5%;
+  //font-size: 62.5%;
+  color: $black;
+
+  /*font-family: ryo-gothic-plusn, sans-serif;*/
+}
+
+body {
+  box-sizing: content-box;
+  width: 100%;
+  font-size: 0;
+  max-width: 144.0rem;
+  margin: 0 auto;
+
+  background: $light;
+  border-left: calc(calc(100vw - 144.0rem) / 2) solid $pink;
+  border-right: calc(calc(100vw - 144.0rem) / 2) solid $light-orange;
+
+  #hamburger {
+    display: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.inner1200 {
+  width: 100%;
+  max-width: 120.0rem;
+  margin: 0 auto;
+}
+
+.inner1000 {
+  width: 100%;
+  max-width: 100.0rem;
+  margin: 0 auto;
+}
+
+.arrow-double {
+  position: relative;
+
+  &::before, &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    width: 1.2rem;
+    height: 1.2rem;
+    border-top: 0.2rem solid #fff;
+    border-right: 0.2rem solid #fff;
+    vertical-align: middle;
+
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    animation: trans 2s infinite;
+  }
+
+  &::before {
+    left: 1.2rem;
+    animation-delay: 0s;
+  }
+
+  &::after {
+    left: $h3;
+    animation-delay: .5s;
+  }
+}
+
+.underline {
+  padding-bottom: 0.4rem;
+  border-bottom: 0.2rem solid $orange;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.purple {
+  background: $purple;
+}
+
+.cyan {
+  background: $cyan;
+}
+
+.salmon {
+  background: $salmon;
+}
+
+.cv-btn {
+  @include mincho;
+
+  display: block;
+  font-size: $h3;
+  line-height: 7.2rem;
+
+  margin: 0 auto;
+
+  background: $orange;
+  color: $white;
+  height: 7.2rem;
+  width: 100%;
+  max-width: 100%;
+
+  text-align: center;
+  border-radius: 3.6rem;
+
+  z-index: 2;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+header {
+  display: table;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 10.0rem;
+  width: 100vw;
+  padding: $margin $margin 0 $margin;
+
+  background-color: $white;
+  @include shadow;
+  z-index: 999;
+
+  .header-logo {
+    width: 24.0rem;
+    height: 6.0rem;
+    float: left;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  nav {
+    width: calc(100% - 24.0rem);
+    float: right;
+
+    address {
+      text-align: right;
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      height: 2.4rem;
+      margin-bottom: 0.4rem;
+
+      .tel {
+        color: $white;
+        background-color: $cyan;
+        font-size: 1.1rem;
+        padding: 0.5rem;
+        margin-right: 1.0rem;
+      }
+
+      .small {
+        font-size: 1.2rem;
+      }
+    }
+
+    ul.parent {
+      text-align: right;
+      list-style: none;
+      font-size: 1.6rem;
+      line-height: 2.6rem;
+      height: 4.6rem;
+
+      transition: 0.5s;
+
+      li {
+        display: inline-block;
+        color: $black;
+        padding-bottom: 2.3rem;
+      }
+
+      li + li {
+        margin-left: $margin;
+      }
+
+      .course {
+        span {
+          position: relative;
+
+          padding-right: 2.0rem;
+          cursor: pointer;
+
+          &::after {
+            content: "";
+            display: block;
+            box-sizing: border-box;
+            width: 1.0rem;
+            height: 1.0rem;
+            border: 0.5rem solid transparent;
+            border-top-color: $gray;
+            position: absolute;
+            top: 0.5rem;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+          }
+        }
+
+        ul.child {
+          display: none;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 10.0rem;
+          background: $white;
+          text-align: center;
+          align-items: center;
+          margin: 0 auto;
+          @include shadow;
+
+          li {
+            display: inline-block;
+            font-size: $h4;
+            line-height: 1;
+
+            a {
+              display: block;
+              padding: $margin;
+              color: $white;
+              background: $gray;
+              border-radius: 1.0rem;
+
+              &::after {
+                display: none;
+              }
+            }
+
+            &.epithese {
+              a {
+                background: $purple;
+              }
+            }
+
+            &.recovery {
+              a {
+                background: $cyan;
+              }
+            }
+
+            &.angel {
+              a {
+                background: $salmon;
+              }
+            }
+          }
+        }
+      }
+
+      .contact {
+        a {
+          display: block;
+          padding: 0.3rem 1.0rem;
+          color: $white;
+          background: $orange;
+        }
+      }
+    }
+
+    &:hover {
+      ul.parent {
+        li {
+          span {
+            &::after {
+              border-top-color: transparent;
+              border-bottom-color: $gray;
+              top: 0;
+              bottom: 0.2rem;
+            }
+          }
+
+          ul.child {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &::after {
+      @include clearfix;
+    }
+  }
+
+  &::after {
+    @include clearfix;
+  }
+}
+
+main {
+  overflow: hidden;
+
+  background-color: $light;
+  background: url(../img/background-top.jpg) no-repeat center 10.0rem;
+  background-size: contain;
+
+  padding-bottom: $section-margin;
+
+  .main-header {
+    margin: 10.0rem $margin $section-margin $margin;
+
+    &::after {
+      @include clearfix;
+    }
+
+    &-title {
+      position: relative;
+      height: 31.2rem;
+      margin-bottom: $margin * 2;
+
+      p {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 1.8rem;
+        line-height: 2.9rem;
+        padding-bottom: $section-margin;
+        height: 100%;
+        color: $white;
+        background: $orange;
+        writing-mode: vertical-rl;
+        text-align: right;
+
+        z-index: 3;
+      }
+
+      h1 {
+        position: absolute;
+        left: 2.8rem;
+        bottom: 7.2rem;
+        @include mincho;
+        color: $white;
+        font-size: 6.0rem;
+        line-height: 1;
+
+        z-index: 2;
+
+        .title {
+          display: block;
+          clear: both;
+          float: left;
+          background: $cool-gradient;
+          padding: 0 $margin * 2;
+        }
+
+        span + span {
+          margin-top: $margin;
+        }
+      }
+
+      h2 {
+        position: absolute;
+        left: 2.8rem;
+        bottom: 0;
+
+        z-index: 1;
+
+        .subtitle {
+          display: block;
+          clear: both;
+          float: left;
+          background: $hot-gradient;
+
+          @include mincho;
+          color: $white;
+          font-size: $h2;
+          line-height: 1.5;
+
+          padding: 0 calc(#{$margin} * 2 + 0.5rem);
+        }
+      }
+    }
+
+    h2 {
+      font-size: $h2;
+      line-height: 6.0rem;
+
+      .underline {
+        padding-bottom: 0.5rem;
+        border-bottom: 0.3rem solid $orange;
+      }
+    }
+
+    .lead {
+      position: relative;
+      height: 22.0rem;
+
+      &-text {
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+
+        p {
+          width: calc(100% - #{$margin});
+          margin-right: $margin * 2;
+          padding: $margin;
+          background: $white;
+          font-size: 1.6rem;
+          line-height: 2;
+
+          @include shadow;
+        }
+      }
+
+      &-cv {
+        p {
+          position: absolute;
+          bottom: -$h1;
+          right: 0;
+          width: 100%;
+
+          width: 30.0rem;
+          height: 45.0rem;
+
+          font-size: $h3;
+          line-height: 4.0rem;
+          text-align: center;
+          color: $white;
+
+          z-index: 1;
+
+          &:before {
+            content: "";
+            background: url(../img/balloon.png) no-repeat center top;
+            width: 100%;
+            height: 100%;
+
+            background-size: contain;
+            position: absolute;
+            top: -12.0rem;
+            right: 0;
+
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    padding: 0 $margin;
+    margin-bottom: $section-margin * 2;
+
+    &.box {
+      width: calc(100% - #{$margin} * 2);
+
+      margin: 0 auto;
+      padding: $margin * 2 $margin;
+
+      background: $white;
+      box-shadow: 0 1.0rem 1.0rem $deep;
+
+      div {
+        margin-bottom: $section-margin;
+      }
+
+      .cv-btn {
+        margin-bottom: $section-margin;
+      }
+
+      h3 {
+        @include mincho;
+
+        float: left;
+
+        margin: calc(#{$section-margin} * 2) auto calc(#{$margin} * 2) - $margin;
+        padding: 1.0rem $margin * 2;
+
+        font-size: $h2;
+        line-height: 1;
+
+        color: $white;
+        background: $gray;
+
+        &:nth-of-type(2n) {
+          float: right;
+
+          margin-left: auto;
+          margin-right: -$margin;
+
+          text-align: right;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      div:nth-of-type(2n) {
+        h3 {
+          float: right;
+
+          margin-left: auto;
+          margin-right: -$margin;
+
+          text-align: right;
+        }
+      }
+
+      h4 {
+        &::before {
+          @include clearfix;
+        }
+
+        font-size: $h3;
+        line-height: 2;
+
+        text-align: center;
+      }
+
+      p {
+        font-size: $p;
+        line-height: 2;
+        text-align: left;
+
+        &:last-of-type{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .course {
+    img {
+      margin-bottom: $margin;
+    }
+
+    h3 {
+      @include mincho;
+
+      width: 100%;
+
+      font-size: $h2;
+      line-height: 1.5;
+      text-align: center;
+
+      margin-bottom: $margin;
+
+      color: $orange;
+    }
+
+    p {
+      width: 100%;
+
+      font-size: $h3;
+      line-height: 1;
+      text-align: center;
+
+      margin-bottom: $section-margin;
+    }
+
+    &-3 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: -$margin;
+
+      div[class^="course-3"] {
+        position: relative;
+
+        width: calc(100% / 3 - #{$margin} * 2);
+        margin: $margin;
+
+        background: $white;
+        @include shadow;
+
+        h4 {
+          @include mincho;
+
+          font-size: $h3;
+          line-height: 1.5;
+          margin-bottom: $margin;
+          text-align: center;
+        }
+
+        p {
+          margin-bottom: $margin;
+
+          font-size: $p;
+          line-height: 2;
+          text-align: left;
+        }
+
+        a {
+          display: block;
+          padding: $margin;
+
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &-epithese {
+        order: 2;
+        transform: scale(1.1);
+
+        &:before {
+          content: "人気No.1";
+          display: block;
+          position: absolute;
+
+          @include mincho;
+          right: 0;
+          top: 0;
+
+          font-size: 1.8rem;
+          line-height: 1.5;
+          text-align: center;
+
+          width: 20.0rem;
+
+          color: $white;
+          background: url(../img/ribbon.svg) no-repeat;
+
+          transform-origin: center;
+          transform: translate(3.8rem, 4.8rem) rotate(45deg);
+          z-index: 99;
+        }
+      }
+
+      &-epithese,
+      &-nipple,
+      &-fingers,
+      &-hand-and-foot,
+      &-eyes,
+      &-nose,
+      &-ear {
+        border-bottom: 1.0rem solid $purple;
+      }
+
+      &-recovery {
+        transform: scale(0.95);
+        transform-origin: left;
+        order: 1;
+      }
+
+      &-recovery,
+      &-airbrush,
+      &-cover,
+      &-tattoo {
+        border-bottom: 1.0rem solid $cyan;
+      }
+
+      &-tattoo {
+        order: 1;
+      }
+
+      &-cover {
+        order: 2;
+      }
+
+      &-airbrush {
+        order: 3;
+      }
+
+      &-angel {
+        transform: scale(0.95);
+        transform-origin: right;
+
+        order: 3;
+        border-bottom: 1.0rem solid $salmon;
+      }
+    }
+  }
+}
+
+footer {
+  padding: $margin $margin $section-margin $margin;
+  background: $pale-gradient;
+
+  .footer-header {
+    padding: 0 $margin;
+    margin-bottom: $margin * 2;
+
+    .footer-logo {
+      width: 16.0rem;
+      height: 4.0rem;
+      float: left;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    &-nav {
+      width: calc(100% - 16.0rem);
+      float: right;
+
+      ul {
+        text-align: right;
+
+        list-style: none;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+
+        margin-top: 0.5rem;
+
+        li {
+          display: inline-block;
+          color: $black;
+        }
+
+        li + li {
+          margin-left: $margin;
+        }
+
+        .contact {
+          a {
+            display: block;
+            padding: 0.3rem 1.0rem;
+            color: $white;
+            background: $cyan;
+          }
+        }
+      }
+    }
+
+    &::after {
+      @include clearfix;
+    }
+  }
+
+  .footer-main {
+    padding: 0 $margin $margin * 2 $margin;
+    display: flex;
+
+    &-address {
+      width: 20.0rem;
+
+      p {
+        font-size: 1.2rem;
+        line-height: 2.0rem;
+        margin: 0 $margin $margin 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .line {
+        display: inline-block;
+        position: relative;
+        width: 2.8rem;
+        height: 0;
+        margin: 1.4rem 0;
+        border-bottom: 0.1rem solid $black;
+      }
+    }
+
+    &-map {
+      width: calc(100% - 20.0rem);
+      background: $cyan;
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  header {
+    height: 8.0rem;
+
+    .header-logo {
+      width: 18.0rem;
+      height: 4.0rem;
+    }
+
+    nav {
+      address {
+        font-size: 0;
+
+        position: absolute;
+        display: block;
+        width: 4.0rem;
+        height: 4.0rem;
+        right: 8.0rem;
+        top: $margin;
+        background: url(../img/phone.svg) no-repeat center;
+        background-size: contain;
+
+        a {
+          position: absolute;
+          display: block;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+
+        .tel {
+          font-size: 0;
+          padding: 0;
+        }
+
+        .small {
+          font-size: 0;
+        }
+      }
+
+      ul.parent {
+        @include shadow;
+
+        position: absolute;
+        top: 8.0rem;
+        right: 0;
+        width: 100vw;
+        height: auto;
+        margin: 0 auto;
+        padding: 0;
+        background: $white;
+
+        visibility: hidden;
+        opacity: 0;
+        z-index: -999;
+
+        li {
+          width: 100vw;
+          min-height: 6.0rem;
+          position: relative;
+          margin: 0;
+          padding: 0;
+          border-top: 0.2rem solid $gray;
+          background: $white;
+          box-sizing: border-box;
+
+          font-size: $p;
+          text-align: center;
+          line-height: 6.0rem;
+
+          a {
+            display: block;
+            box-sizing: border-box;
+            height: 6.0rem;
+
+            margin: 0;
+            padding: 0;
+          }
+
+          &.course {
+            padding: 0;
+            margin: 0;
+
+            span {
+              display: block;
+              box-sizing: border-box;
+              height: 6.0rem;
+
+              background: $gray;
+              color: $white;
+
+              padding: 0;
+              margin: 0;
+
+              &::after {
+                display: none;
+              }
+            }
+
+            ul.child {
+              position: relative;
+              top: auto;
+              bottom: auto;
+              left: auto;
+              right: auto;
+              display: block;
+              height: 18.0rem;
+
+              li {
+                position: relative;
+                display: block;
+                text-align: center;
+                font-size: $p;
+                line-height: 6.0rem;
+                height: 6.0rem;
+                border-top: 0.1rem solid $gray;
+                border-left: 1.0rem solid $gray;
+                border-right: 1.0rem solid $gray;
+
+                a {
+                  display: block;
+                  box-sizing: border-box;
+                  height: 6.0rem;
+
+                  border-radius: 0;
+
+                  margin: 0;
+                  padding: 0;
+
+                  &:hover {
+                    opacity: 1.0;
+                    background: $black;
+                    color: $white;
+                  }
+                }
+
+                &:first-child {
+                  border-top: 0;
+                }
+              }
+            }
+          }
+
+          &.contact {
+            a {
+              background: $orange;
+              padding: 0;
+            }
+          }
+
+          a {
+            display: block;
+            height: 100%;
+
+            &:hover {
+              opacity: 1.0;
+              background: $black;
+              color: $white;
+            }
+          }
+        }
+
+        li + li {
+          margin: 0;
+        }
+      }
+
+      #hamburger {
+        &::after {
+          @include clearfix;
+        }
+
+        position: absolute;
+
+        right: 2.3rem;
+        top: 2.5rem;
+
+        width: 3.8rem;
+        height: 3.0rem;
+        cursor: pointer;
+
+        display: inline-block;
+        transition: all .5s;
+        box-sizing: border-box;
+
+        span {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 0.3rem;
+          background-color: $black;
+          border-radius: 0.3rem;
+
+          display: inline-block;
+          transition: all .5s;
+          box-sizing: border-box;
+
+          &:nth-of-type(1) {
+            top: 0;
+          }
+
+          &:nth-of-type(2) {
+            top: 1.4rem;
+          }
+
+          &:nth-of-type(3) {
+            bottom: 0;
+          }
+        }
+      }
+
+      &.menu-active {
+        margin-left: -$margin;
+
+        #hamburger {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+
+          span {
+            &:nth-of-type(1) {
+              -webkit-transform: translateY(1.4rem) rotate(-45deg);
+              transform: translateY(1.4rem) rotate(-45deg);
+            }
+
+            &:nth-of-type(2) {
+              -webkit-transform: translateY(0) rotate(45deg);
+              transform: translateY(0) rotate(45deg);
+            }
+
+            &:nth-of-type(3) {
+              opacity: 0;
+            }
+          }
+        }
+
+        ul.parent {
+          visibility: visible;
+          opacity: 1.0;
+          z-index: 999;
+        }
+      }
+    }
+  }
+
+  main {
+    background-position: center 6.0rem;
+
+    .main-header {
+      margin-top: 8.0rem;
+
+      .lead {
+        position: relative;
+        height: auto;
+        margin-top: 4.0rem;
+
+        &-text {
+          position: relative;
+          width: 100%;
+
+          p {
+            width: 100%;
+            margin-right: 0 auto;
+          }
+        }
+
+        &-cv {
+          position: relative;
+          width: 100%;
+          margin-top: 4.0rem;
+
+          p {
+            position: relative;
+            top: 12.0rem;
+            margin: 0 auto;
+          }
+
+          a {
+            position: relative;
+
+            width: 100%;
+            margin: 0 auto;
+
+            z-index: 2;
+          }
+        }
+      }
+    }
+
+    .voice {
+      &-text {
+        p {
+          font-size: 1.4rem;
+          line-height: 2.8rem;
+        }
+      }
+    }
+  }
+
+  footer {
+    nav {
+      ul, address {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pc-none {
+    display: block;
+  }
+
+  .sp-none {
+    display: none;
+  }
+
+  main {
+    .main-header {
+      &-title {
+        position: relative;
+        height: 20.0rem;
+        margin-bottom: $margin * 2;
+
+        p {
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 1.2rem;
+          line-height: 1.5;
+          padding-bottom: 5.0rem;
+          color: $white;
+          background: $orange;
+          writing-mode: vertical-rl;
+          text-align: right;
+        }
+
+        h1 {
+          left: 1.8rem;
+          font-size: 3.6rem;
+          line-height: 1;
+
+          bottom: $h1;
+
+          .title {
+            padding: 0 $margin;
+          }
+
+          span + span {
+            margin-top: $margin;
+          }
+        }
+
+        h2 {
+          left: 1.8rem;
+          font-size: 2.0rem;
+          line-height: 1.5;
+
+          .subtitle {
+            font-size: 2.4rem;
+            height: 3.2rem;
+            line-height: 3.2rem;
+            padding: 0 $margin;
+          }
+        }
+      }
+
+      h2 {
+        font-size: $h4;
+        line-height: 4.0rem;
+      }
+    }
+
+    section {
+      &.box {
+        h3 {
+          @include mincho;
+
+          float: left;
+
+          margin: calc(#{$section-margin} * 2) auto calc(#{$margin} * 2) - $margin;
+          padding: 1.0rem $margin * 2;
+
+          font-size: $h3;
+          line-height: 1;
+        }
+      }
+    }
+
+    .course {
+      &-3 {
+        display: block;
+        margin: 0;
+
+        div[class^="course-3"] {
+          position: relative;
+
+          width: 100%;
+          transform: none;
+          margin: 0 0 $margin 0;
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: $margin;
+
+    .footer-header {
+      padding: 0;
+    }
+
+    .footer-main {
+      display: block;
+      padding: 0;
+
+      &-address {
+        display: flex;
+        width: 100%;
+        margin-bottom: $margin;
+
+        p {
+          width: 50%;
+        }
+      }
+
+      &-map {
+        width: 100%;
+        min-height: 30.0rem;
+      }
+    }
+  }
+}

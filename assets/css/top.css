@@ -1,0 +1,1790 @@
+@charset "UTF-8";
+.loading {
+  -webkit-transition: 0 !important;
+  transition: 0 !important;
+}
+
+.pc-none {
+  display: none;
+}
+
+@font-face {
+  font-family: "Zapfino";
+  src: url("../font/Zapfino.eot");
+  src: url("../font/Zapfino.eot?#iefix") format("embedded-opentype"), url("../font/Zapfino.woff") format("woff"), url("../font/Zapfino.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-webkit-keyframes trans {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes trans {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+html {
+  font-family: "游ゴシック", "Yu Gothic", YuGothic, "游ゴシック体", a-otf-futo-go-b101-pr6n, "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  font-weight: 600;
+  -webkit-font-feature-settings: initial;
+          font-feature-settings: initial;
+  font-size: 56.5%;
+  color: #000;
+  /*font-family: ryo-gothic-plusn, sans-serif;*/
+}
+
+body {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  width: 100%;
+  font-size: 0;
+  max-width: 144.0rem;
+  margin: 0 auto;
+  background: #f5f5f5;
+  border-left: calc(calc(100vw - 144.0rem) / 2) solid #ffe0e0;
+  border-right: calc(calc(100vw - 144.0rem) / 2) solid #ffc090;
+}
+
+body #hamburger {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.inner1200 {
+  width: 100%;
+  max-width: 120.0rem;
+  margin: 0 auto;
+}
+
+.inner1000 {
+  width: 100%;
+  max-width: 100.0rem;
+  margin: 0 auto;
+}
+
+.arrow-double {
+  position: relative;
+}
+
+.arrow-double::before, .arrow-double::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-top: 0.2rem solid #fff;
+  border-right: 0.2rem solid #fff;
+  vertical-align: middle;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-animation: trans 2s infinite;
+          animation: trans 2s infinite;
+}
+
+.arrow-double::before {
+  left: 1.2rem;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.arrow-double::after {
+  left: 2.4rem;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+.underline {
+  padding-bottom: 0.4rem;
+  border-bottom: 0.2rem solid #ff8040;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.purple {
+  background: #b0b0ff;
+}
+
+.cyan {
+  background: #40c0dc;
+}
+
+.salmon {
+  background: #ff6080;
+}
+
+.cv-btn {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  display: block;
+  font-size: 2.4rem;
+  line-height: 7.2rem;
+  margin: 0 auto;
+  background: #ff8040;
+  color: #fff;
+  height: 7.2rem;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  border-radius: 3.6rem;
+  z-index: 2;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+header {
+  display: table;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10.0rem;
+  width: 100vw;
+  padding: 2rem 2rem 0 2rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1rem 1rem #888;
+          box-shadow: 0 1rem 1rem #888;
+  z-index: 999;
+}
+
+header .header-logo {
+  width: 24.0rem;
+  height: 6.0rem;
+  float: left;
+}
+
+header .header-logo img {
+  height: 100%;
+}
+
+header nav {
+  width: calc(100% - 24.0rem);
+  float: right;
+}
+
+header nav address {
+  text-align: right;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  height: 2.4rem;
+  margin-bottom: 0.4rem;
+}
+
+header nav address .tel {
+  color: #fff;
+  background-color: #40c0dc;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  margin-right: 1.0rem;
+}
+
+header nav address .small {
+  font-size: 1.2rem;
+}
+
+header nav ul.parent {
+  text-align: right;
+  list-style: none;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  height: 4.6rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header nav ul.parent li {
+  display: inline-block;
+  color: #000;
+  padding-bottom: 2.3rem;
+}
+
+header nav ul.parent li + li {
+  margin-left: 2rem;
+}
+
+header nav ul.parent .course span {
+  position: relative;
+  padding-right: 2.0rem;
+  cursor: pointer;
+}
+
+header nav ul.parent .course span::after {
+  content: "";
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 1.0rem;
+  height: 1.0rem;
+  border: 0.5rem solid transparent;
+  border-top-color: #aaa;
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+header nav ul.parent .course ul.child {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10.0rem;
+  background: #fff;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 1rem 1rem #888;
+          box-shadow: 0 1rem 1rem #888;
+}
+
+header nav ul.parent .course ul.child li {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+header nav ul.parent .course ul.child li a {
+  display: block;
+  padding: 2rem;
+  color: #fff;
+  background: #aaa;
+  border-radius: 1.0rem;
+}
+
+header nav ul.parent .course ul.child li a::after {
+  display: none;
+}
+
+header nav ul.parent .course ul.child li.epithese a {
+  background: #b0b0ff;
+}
+
+header nav ul.parent .course ul.child li.recovery a {
+  background: #40c0dc;
+}
+
+header nav ul.parent .course ul.child li.angel a {
+  background: #ff6080;
+}
+
+header nav ul.parent .contact a {
+  display: block;
+  padding: 0.3rem 1.0rem;
+  color: #fff;
+  background: #ff8040;
+}
+
+header nav:hover ul.parent li span::after {
+  border-top-color: transparent;
+  border-bottom-color: #aaa;
+  top: 0;
+  bottom: 0.2rem;
+}
+
+header nav:hover ul.parent li ul.child {
+  display: block;
+}
+
+header nav::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+main {
+  overflow: hidden;
+  background-color: #f5f5f5;
+  background: url(../img/background-top.jpg) no-repeat center 10rem;
+  background-size: contain;
+  padding-bottom: 8rem;
+}
+
+main .main-header {
+  margin: 10rem 2rem 8rem 2rem;
+}
+
+main .main-header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+main .main-header-title {
+  position: relative;
+  height: 31.2rem;
+  margin-bottom: 4rem;
+}
+
+main .main-header-title p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.8rem;
+  line-height: 2.9rem;
+  padding-bottom: 8rem;
+  height: 100%;
+  color: #fff;
+  background: #ff8040;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-align: right;
+  z-index: 3;
+}
+
+main .main-header-title h1 {
+  position: absolute;
+  left: 2.8rem;
+  bottom: 7.2rem;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  color: #fff;
+  font-size: 6.0rem;
+  line-height: 1;
+  z-index: 2;
+}
+
+main .main-header-title h1 .title {
+  display: block;
+  clear: both;
+  float: left;
+  background: -webkit-gradient(linear, left top, right top, from(#40c0dc), to(#80e0d0));
+  background: linear-gradient(90deg, #40c0dc 0%, #80e0d0 100%);
+  padding: 0 4rem;
+}
+
+main .main-header-title h1 span + span {
+  margin-top: 2rem;
+}
+
+main .main-header-title h2 {
+  position: absolute;
+  left: 2.8rem;
+  bottom: 0;
+  z-index: 1;
+}
+
+main .main-header-title h2 .subtitle {
+  display: block;
+  clear: both;
+  float: left;
+  background: -webkit-gradient(linear, left top, right top, from(#ff8040), to(#ffc090));
+  background: linear-gradient(90deg, #ff8040 0%, #ffc090 100%);
+  font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  color: #fff;
+  font-size: 3.2rem;
+  line-height: 1.5;
+  padding: 0 calc(2rem * 2 + 0.5rem);
+}
+
+main .main-header h2 {
+  font-size: 3.2rem;
+  line-height: 6.0rem;
+}
+
+main .main-header h2 .underline {
+  padding-bottom: 0.5rem;
+  border-bottom: 0.3rem solid #ff8040;
+}
+
+main .main-header .lead {
+  position: relative;
+  height: 22.0rem;
+}
+
+main .main-header .lead-text {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+}
+
+main .main-header .lead-text p {
+  width: calc(100% - 2rem);
+  margin-right: 4rem;
+  padding: 2rem;
+  background: #fff;
+  font-size: 1.6rem;
+  line-height: 2;
+  -webkit-box-shadow: 0 1rem 1rem #888;
+          box-shadow: 0 1rem 1rem #888;
+}
+
+main .main-header .lead-cv p {
+  position: absolute;
+  bottom: -4.8rem;
+  right: 0;
+  width: 100%;
+  width: 30.0rem;
+  height: 45.0rem;
+  font-size: 2.4rem;
+  line-height: 4.0rem;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+main .main-header .lead-cv p:before {
+  content: "";
+  background: url(../img/balloon.png) no-repeat center top;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  position: absolute;
+  top: -12.0rem;
+  right: 0;
+  z-index: -1;
+}
+
+main section {
+  padding: 0 2rem;
+  margin-bottom: 16rem;
+}
+
+main section.box {
+  width: calc(100% - 2rem * 2);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: #fff;
+  -webkit-box-shadow: 0 1rem 1rem #888;
+          box-shadow: 0 1rem 1rem #888;
+}
+
+main section.box div {
+  margin-bottom: 8rem;
+}
+
+main section.box .cv-btn {
+  margin-bottom: 8rem;
+}
+
+main section.box h3 {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  float: left;
+  margin: calc(8rem * 2) auto calc(2rem * 2)-2rem;
+  padding: 1rem 4rem;
+  font-size: 3.2rem;
+  line-height: 1;
+  color: #fff;
+  background: #aaa;
+}
+
+main section.box h3:nth-of-type(2n) {
+  float: right;
+  margin-left: auto;
+  margin-right: -2rem;
+  text-align: right;
+}
+
+main section.box h3:first-child {
+  margin-top: 0;
+}
+
+main section.box div:nth-of-type(2n) h3 {
+  float: right;
+  margin-left: auto;
+  margin-right: -2rem;
+  text-align: right;
+}
+
+main section.box h4 {
+  font-size: 2.4rem;
+  line-height: 2;
+  text-align: center;
+}
+
+main section.box h4::before {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+main section.box p {
+  font-size: 1.6rem;
+  line-height: 2;
+  text-align: left;
+}
+
+main section.box p:last-of-type {
+  margin-bottom: 0;
+}
+
+main .course img {
+  margin-bottom: 2rem;
+}
+
+main .course h3 {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  width: 100%;
+  font-size: 3.2rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ff8040;
+}
+
+main .course p {
+  width: 100%;
+  font-size: 2.4rem;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+main .course-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: -2rem;
+}
+
+main .course-3 div[class^="course-3"] {
+  position: relative;
+  width: calc(100% / 3 - 2rem * 2);
+  margin: 2rem;
+  background: #fff;
+  -webkit-box-shadow: 0 1rem 1rem #888;
+          box-shadow: 0 1rem 1rem #888;
+}
+
+main .course-3 div[class^="course-3"] h4 {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-size: 2.4rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+main .course-3 div[class^="course-3"] p {
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  line-height: 2;
+  text-align: left;
+}
+
+main .course-3 div[class^="course-3"] a {
+  display: block;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+main .course-3-epithese {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+main .course-3-epithese:before {
+  content: "人気No.1";
+  display: block;
+  position: absolute;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  right: 0;
+  top: 0;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  text-align: center;
+  width: 20.0rem;
+  color: #fff;
+  background: url(../img/ribbon.svg) no-repeat;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: translate(3.8rem, 4.8rem) rotate(45deg);
+          transform: translate(3.8rem, 4.8rem) rotate(45deg);
+  z-index: 99;
+}
+
+main .course-3-epithese, main .course-3-nipple, main .course-3-fingers, main .course-3-hand-and-foot, main .course-3-eyes, main .course-3-nose, main .course-3-ear {
+  border-bottom: 1rem solid #b0b0ff;
+}
+
+main .course-3-recovery {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+main .course-3-recovery, main .course-3-airbrush, main .course-3-cover, main .course-3-tattoo {
+  border-bottom: 1rem solid #40c0dc;
+}
+
+main .course-3-tattoo {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+main .course-3-cover {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+main .course-3-airbrush {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+main .course-3-angel {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  border-bottom: 1rem solid #ff6080;
+}
+
+footer {
+  padding: 2rem 2rem 8rem 2rem;
+  background: -webkit-gradient(linear, left top, right top, from(#ffe0e0), to(#ffc090));
+  background: linear-gradient(90deg, #ffe0e0 0%, #ffc090 100%);
+}
+
+footer .footer-header {
+  padding: 0 2rem;
+  margin-bottom: 4rem;
+}
+
+footer .footer-header .footer-logo {
+  width: 16.0rem;
+  height: 4.0rem;
+  float: left;
+}
+
+footer .footer-header .footer-logo img {
+  height: 100%;
+}
+
+footer .footer-header-nav {
+  width: calc(100% - 16.0rem);
+  float: right;
+}
+
+footer .footer-header-nav ul {
+  text-align: right;
+  list-style: none;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  margin-top: 0.5rem;
+}
+
+footer .footer-header-nav ul li {
+  display: inline-block;
+  color: #000;
+}
+
+footer .footer-header-nav ul li + li {
+  margin-left: 2rem;
+}
+
+footer .footer-header-nav ul .contact a {
+  display: block;
+  padding: 0.3rem 1.0rem;
+  color: #fff;
+  background: #40c0dc;
+}
+
+footer .footer-header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+footer .footer-main {
+  padding: 0 2rem 4rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .footer-main-address {
+  width: 20.0rem;
+}
+
+footer .footer-main-address p {
+  font-size: 1.2rem;
+  line-height: 2.0rem;
+  margin: 0 2rem 2rem 0;
+}
+
+footer .footer-main-address p:last-child {
+  margin-bottom: 0;
+}
+
+footer .footer-main-address .line {
+  display: inline-block;
+  position: relative;
+  width: 2.8rem;
+  height: 0;
+  margin: 1.4rem 0;
+  border-bottom: 0.1rem solid #000;
+}
+
+footer .footer-main-map {
+  width: calc(100% - 20.0rem);
+  background: #40c0dc;
+}
+
+@media screen and (max-width: 980px) {
+  html {
+    font-size: 62.5%;
+  }
+  header {
+    height: 8.0rem;
+  }
+  header .header-logo {
+    width: 18.0rem;
+    height: 4.0rem;
+  }
+  header nav address {
+    font-size: 0;
+    position: absolute;
+    display: block;
+    width: 4.0rem;
+    height: 4.0rem;
+    right: 8.0rem;
+    top: 2rem;
+    background: url(../img/phone.svg) no-repeat center;
+    background-size: contain;
+  }
+  header nav address a {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  header nav address .tel {
+    font-size: 0;
+    padding: 0;
+  }
+  header nav address .small {
+    font-size: 0;
+  }
+  header nav ul.parent {
+    -webkit-box-shadow: 0 1rem 1rem #888;
+            box-shadow: 0 1rem 1rem #888;
+    position: absolute;
+    top: 8.0rem;
+    right: 0;
+    width: 100vw;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -999;
+  }
+  header nav ul.parent li {
+    width: 100vw;
+    min-height: 6.0rem;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border-top: 0.2rem solid #aaa;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 6.0rem;
+  }
+  header nav ul.parent li a {
+    display: block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 6.0rem;
+    margin: 0;
+    padding: 0;
+  }
+  header nav ul.parent li.course {
+    padding: 0;
+    margin: 0;
+  }
+  header nav ul.parent li.course span {
+    display: block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 6.0rem;
+    background: #aaa;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+  }
+  header nav ul.parent li.course span::after {
+    display: none;
+  }
+  header nav ul.parent li.course ul.child {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    display: block;
+    height: 18.0rem;
+  }
+  header nav ul.parent li.course ul.child li {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 6.0rem;
+    height: 6.0rem;
+    border-top: 0.1rem solid #aaa;
+    border-left: 1rem solid #aaa;
+    border-right: 1rem solid #aaa;
+  }
+  header nav ul.parent li.course ul.child li a {
+    display: block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 6.0rem;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+  header nav ul.parent li.course ul.child li a:hover {
+    opacity: 1.0;
+    background: #000;
+    color: #fff;
+  }
+  header nav ul.parent li.course ul.child li:first-child {
+    border-top: 0;
+  }
+  header nav ul.parent li.contact a {
+    background: #ff8040;
+    padding: 0;
+  }
+  header nav ul.parent li a {
+    display: block;
+    height: 100%;
+  }
+  header nav ul.parent li a:hover {
+    opacity: 1.0;
+    background: #000;
+    color: #fff;
+  }
+  header nav ul.parent li + li {
+    margin: 0;
+  }
+  header nav #hamburger {
+    position: absolute;
+    right: 2.3rem;
+    top: 2.5rem;
+    width: 3.8rem;
+    height: 3.0rem;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  header nav #hamburger::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  header nav #hamburger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.3rem;
+    background-color: #000;
+    border-radius: 0.3rem;
+    display: inline-block;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  header nav #hamburger span:nth-of-type(1) {
+    top: 0;
+  }
+  header nav #hamburger span:nth-of-type(2) {
+    top: 1.4rem;
+  }
+  header nav #hamburger span:nth-of-type(3) {
+    bottom: 0;
+  }
+  header nav.menu-active {
+    margin-left: -2rem;
+  }
+  header nav.menu-active #hamburger {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  header nav.menu-active #hamburger span:nth-of-type(1) {
+    -webkit-transform: translateY(1.4rem) rotate(-45deg);
+    transform: translateY(1.4rem) rotate(-45deg);
+  }
+  header nav.menu-active #hamburger span:nth-of-type(2) {
+    -webkit-transform: translateY(0) rotate(45deg);
+    transform: translateY(0) rotate(45deg);
+  }
+  header nav.menu-active #hamburger span:nth-of-type(3) {
+    opacity: 0;
+  }
+  header nav.menu-active ul.parent {
+    visibility: visible;
+    opacity: 1.0;
+    z-index: 999;
+  }
+  main {
+    background-position: center 6.0rem;
+  }
+  main .main-header {
+    margin-top: 8.0rem;
+  }
+  main .main-header .lead {
+    position: relative;
+    height: auto;
+    margin-top: 4.0rem;
+  }
+  main .main-header .lead-text {
+    position: relative;
+    width: 100%;
+  }
+  main .main-header .lead-text p {
+    width: 100%;
+    margin-right: 0 auto;
+  }
+  main .main-header .lead-cv {
+    position: relative;
+    width: 100%;
+    margin-top: 4.0rem;
+  }
+  main .main-header .lead-cv p {
+    position: relative;
+    top: 12.0rem;
+    margin: 0 auto;
+  }
+  main .main-header .lead-cv a {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  main .voice-text p {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+  }
+  footer nav ul, footer nav address {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pc-none {
+    display: block;
+  }
+  .sp-none {
+    display: none;
+  }
+  main .main-header-title {
+    position: relative;
+    height: 20.0rem;
+    margin-bottom: 4rem;
+  }
+  main .main-header-title p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding-bottom: 5.0rem;
+    color: #fff;
+    background: #ff8040;
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+    text-align: right;
+  }
+  main .main-header-title h1 {
+    left: 1.8rem;
+    font-size: 3.6rem;
+    line-height: 1;
+    bottom: 4.8rem;
+  }
+  main .main-header-title h1 .title {
+    padding: 0 2rem;
+  }
+  main .main-header-title h1 span + span {
+    margin-top: 2rem;
+  }
+  main .main-header-title h2 {
+    left: 1.8rem;
+    font-size: 2.0rem;
+    line-height: 1.5;
+  }
+  main .main-header-title h2 .subtitle {
+    font-size: 2.4rem;
+    height: 3.2rem;
+    line-height: 3.2rem;
+    padding: 0 2rem;
+  }
+  main .main-header h2 {
+    font-size: 2rem;
+    line-height: 4.0rem;
+  }
+  main section.box h3 {
+    font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+    font-weight: 400;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    float: left;
+    margin: calc(8rem * 2) auto calc(2rem * 2)-2rem;
+    padding: 1rem 4rem;
+    font-size: 2.4rem;
+    line-height: 1;
+  }
+  main .course-3 {
+    display: block;
+    margin: 0;
+  }
+  main .course-3 div[class^="course-3"] {
+    position: relative;
+    width: 100%;
+    -webkit-transform: none;
+            transform: none;
+    margin: 0 0 2rem 0;
+  }
+  footer {
+    padding: 2rem;
+  }
+  footer .footer-header {
+    padding: 0;
+  }
+  footer .footer-main {
+    display: block;
+    padding: 0;
+  }
+  footer .footer-main-address {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  footer .footer-main-address p {
+    width: 50%;
+  }
+  footer .footer-main-map {
+    width: 100%;
+    min-height: 30.0rem;
+  }
+}
+
+main .main-header {
+  margin-bottom: 16rem;
+}
+
+main .main-header-title {
+  height: 24.0rem;
+}
+
+main .main-header-title p {
+  padding-bottom: 0.8rem;
+}
+
+main .main-header-title h1 {
+  bottom: 0;
+}
+
+main .main-header .lead {
+  position: relative;
+  height: 22.0rem;
+}
+
+main .main-header .lead-text {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+}
+
+main .main-header .lead-text p {
+  width: calc(100% - 2rem);
+  margin-right: 4rem;
+  padding: 2rem;
+  background: #fff;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  -webkit-box-shadow: 0 1rem 1rem #888;
+          box-shadow: 0 1rem 1rem #888;
+}
+
+main .main-header .lead-cv .cv-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: calc(50% - 2rem);
+}
+
+main .main-header .lead-cv a {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  font-size: 2.4rem;
+  line-height: 7.2rem;
+  background: #ff8040;
+  color: #fff;
+  height: 7.2rem;
+  width: calc(50% - 2rem);
+  text-align: center;
+  border-radius: 3.6rem;
+}
+
+main .main-header .lead-cv p {
+  position: absolute;
+  bottom: -5.0rem;
+  right: 0;
+  width: 100%;
+  width: 30.0rem;
+  height: 45.0rem;
+  font-size: 2.4rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #fff;
+}
+
+main .main-header .lead-cv p:before {
+  content: "";
+  background: url(../img/balloon.svg) no-repeat center top;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  position: absolute;
+  top: -12.0rem;
+  right: 0;
+  z-index: -1;
+}
+
+main .voice {
+  width: 100%;
+  background: url(../img/background-voice.svg) no-repeat;
+  background-size: contain;
+  background-position: left top;
+}
+
+main .voice h3 {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-size: 3.2rem;
+  line-height: 2;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #ff8040;
+}
+
+main .voice p {
+  font-size: 2rem;
+  line-height: 2;
+  text-indent: 1em;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+main .voice-students {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  -webkit-box-shadow: 0 1rem 1rem #888;
+          box-shadow: 0 1rem 1rem #888;
+}
+
+main .voice-students-student {
+  width: calc(100% / 3);
+  padding: 2rem;
+}
+
+main .voice-students-student img {
+  width: 75%;
+  margin: 0 auto;
+}
+
+main .voice-students-student h4 {
+  font-size: 2rem;
+  line-height: 1;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+main .voice-students-student p {
+  margin-bottom: 0;
+}
+
+main .voice-students-student p:last-child {
+  margin-bottom: 4rem;
+}
+
+main .voice-students-student ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 13.5rem;
+  margin-bottom: 2rem;
+}
+
+main .voice-students-student ul li {
+  width: 100%;
+}
+
+main .voice-students-student ul li a {
+  display: block;
+  width: 100%;
+  font-size: 1.3rem;
+  line-height: 3.0rem;
+  text-align: center;
+  color: #fff;
+  background: #aaa;
+  border-radius: 1.5rem;
+}
+
+main .voice-students-student ul li a.purple {
+  background: #b0b0ff;
+}
+
+main .voice-students-student ul li a.cyan {
+  background: #40c0dc;
+}
+
+main .voice-students-student ul li a.salmon {
+  background: #ff6080;
+}
+
+main .voice-students-student ul li + li {
+  margin-top: 0.5rem;
+}
+
+main .voice-students-student p {
+  font-size: 1.6rem;
+  line-height: 2;
+  text-align: left;
+}
+
+main .what_is_human_art_school {
+  position: relative;
+  width: 100%;
+  padding-left: calc(100% / 3 + 2rem);
+}
+
+main .what_is_human_art_school-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-bottom: 8rem;
+}
+
+main .what_is_human_art_school-text h3 {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, a-otf-ryumin-pr6n, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: normal;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  white-space: nowrap;
+  font-size: 3.2rem;
+  line-height: 1;
+  border-left: 0.2rem solid #ff8040;
+  padding-left: 1.6rem;
+  margin-left: 1.6rem;
+  color: #ff8040;
+}
+
+main .what_is_human_art_school-text-block {
+  width: calc(100% - 6.4rem);
+  padding-left: 1.6rem;
+  border-left: 0.2rem solid #ff8040;
+}
+
+main .what_is_human_art_school-text-block p {
+  font-size: 1.6rem;
+  line-height: 2;
+  text-indent: 1em;
+}
+
+main .what_is_human_art_school-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background: #fff;
+  -webkit-box-shadow: 0 1rem 1rem #888;
+          box-shadow: 0 1rem 1rem #888;
+  margin-bottom: 8rem;
+}
+
+main .what_is_human_art_school-image img {
+  width: 50%;
+  padding: 2rem;
+}
+
+main .what_is_human_art_school:before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 144.0rem;
+  max-width: 100vw;
+  top: -7.0rem;
+  left: -22.0rem;
+  right: -22.0rem;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left top, right top, from(#ffe0e0), to(#ffc090));
+  background: linear-gradient(90deg, #ffe0e0 0%, #ffc090 100%);
+  -webkit-transform: skewY(-45deg) translateZ(-50px);
+  transform: skewY(-45deg) translateZ(-50px);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  z-index: -5;
+}
+
+main .what_is_human_art_school:after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 144.0rem;
+  max-width: 100vw;
+  top: -5.0rem;
+  left: -22.0rem;
+  right: -22.0rem;
+  margin: 0 auto;
+  background: url(../img/background-what_is_human_art_school.jpg) no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  -webkit-transform: skewY(-45deg) translateZ(-100px);
+  transform: skewY(-45deg) translateZ(-100px);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  z-index: -4;
+}
+
+main .course {
+  background: url(../img/background-course.svg) no-repeat;
+  background-size: contain;
+  background-position: right top;
+}
+
+main .features {
+  position: relative;
+  width: 100%;
+  padding-right: calc(100% / 3 + 2rem);
+}
+
+main .features-text {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-bottom: 8rem;
+}
+
+main .features-text h3 {
+  font-family: "游明朝体", "Yu Mincho", YuMincho, a-otf-ryumin-pr6n, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: normal;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  white-space: nowrap;
+  width: 8.0rem;
+  font-size: 3.2rem;
+  line-height: 1;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  border-right: 0.2rem solid #ff8040;
+  padding-right: 1.6rem;
+  margin-right: 1.6rem;
+  color: #ff8040;
+}
+
+main .features-text h3 .small {
+  font-family: "游ゴシック", "Yu Gothic", YuGothic, "游ゴシック体", a-otf-futo-go-b101-pr6n, "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  font-weight: 600;
+  -webkit-font-feature-settings: initial;
+          font-feature-settings: initial;
+  display: block;
+  margin-right: 0.8rem;
+  color: #000;
+  font-size: 2.4rem;
+  line-height: 1;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  font-feature-settings: initial;
+  text-align: right;
+}
+
+main .features-text h4 {
+  position: absolute;
+  top: 0;
+  left: 9.2rem;
+  color: #000;
+  font-size: 2.0rem;
+  line-height: 2;
+}
+
+main .features-text p {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  width: calc(100% - 9.2rem);
+  display: block;
+  font-size: 1.6rem;
+  line-height: 2;
+  text-indent: 1em;
+  padding-right: 1.6rem;
+  border-right: 0.2rem solid #ff8040;
+}
+
+main .features-image {
+  position: relative;
+  width: 100%;
+  margin-bottom: 8rem;
+}
+
+main .features-image ul {
+  padding-top: 90%;
+  position: relative;
+}
+
+main .features-image ul:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 55%;
+  height: 45%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  -webkit-transform: translate(0, 55%);
+          transform: translate(0, 55%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, transparent), color-stop(51%, #ff8040)) no-repeat top left/50% 100%, -webkit-gradient(linear, right top, left bottom, color-stop(50%, transparent), color-stop(51%, #ff8040)) no-repeat top right/50% 100%;
+  background: linear-gradient(to bottom right, transparent 50%, #ff8040 51%) no-repeat top left/50% 100%, linear-gradient(to bottom left, transparent 50%, #ff8040 51%) no-repeat top right/50% 100%;
+}
+
+main .features-image ul li {
+  position: absolute;
+  width: 45%;
+  height: 50%;
+  text-align: center;
+  font-size: 2.4rem;
+  line-height: 1.8;
+  margin: 0 auto;
+  color: #fff;
+  -webkit-transform: translate(0, 25%);
+          transform: translate(0, 25%);
+}
+
+main .features-image ul li:nth-child(1) {
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+main .features-image ul li:nth-child(2) {
+  left: 0;
+  bottom: 0;
+}
+
+main .features-image ul li:nth-child(3) {
+  right: 0;
+  bottom: 0;
+}
+
+main .features-image ul li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, right top, from(#40c0dc), to(#80e0d0));
+  background: linear-gradient(90deg, #40c0dc 0%, #80e0d0 100%);
+  -webkit-transform: translate(0, -30%);
+          transform: translate(0, -30%);
+  z-index: -1;
+}
+
+main .features:before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  background-size: 100% auto;
+  width: 144.0rem;
+  max-width: 100vw;
+  top: -10.5rem;
+  left: -22.0rem;
+  right: -22.0rem;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left top, right top, from(#ffe0e0), to(#ffc090));
+  background: linear-gradient(90deg, #ffe0e0 0%, #ffc090 100%);
+  -webkit-transform: skewY(-135deg) translateZ(-200px);
+  transform: skewY(-135deg) translateZ(-200px);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  z-index: -3;
+}
+
+main .features:after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 144.0rem;
+  max-width: 100vw;
+  top: -8.5rem;
+  left: -22.0rem;
+  right: -22.0rem;
+  margin: 0 auto;
+  background: url(../img/background-features.jpg) no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  -webkit-transform: skewY(-135deg) translateZ(-150px);
+  transform: skewY(-135deg) translateZ(-150px);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  z-index: -2;
+}
+
+@media screen and (max-width: 980px) {
+  main {
+    /*
+    .features {
+      &-image {
+        ul {
+          li {
+            font-size: $h4;
+          }
+        }
+      }
+    }
+    */
+  }
+  main .main-header .lead {
+    position: relative;
+    height: auto;
+    margin-top: 4.0rem;
+  }
+  main .main-header .lead-text {
+    position: relative;
+    width: 100%;
+  }
+  main .main-header .lead-text p {
+    width: 100%;
+    margin-right: 0 auto;
+  }
+  main .main-header .lead-cv {
+    position: relative;
+    width: 100%;
+    margin-top: 4.0rem;
+  }
+  main .main-header .lead-cv p {
+    position: relative;
+    top: 12.0rem;
+    margin: 0 0 0 auto;
+  }
+  main .main-header .lead-cv .cv-btn {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main .main-header-title {
+    height: 16.0rem;
+  }
+  main .main-header-title p {
+    padding-bottom: 0.5rem;
+  }
+  main .main-header-title h1 {
+    bottom: 0;
+  }
+  main .main-header .lead-cv p {
+    position: relative;
+    top: 7.0rem;
+    margin: 0 0 0 auto;
+    width: 20.0rem;
+    height: 30.0rem;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    text-align: center;
+    color: #fff;
+  }
+  main .main-header .lead-cv p:before {
+    top: -7.0rem;
+  }
+  main .voice-students {
+    display: block;
+  }
+  main .voice-students-student {
+    width: 100%;
+  }
+  main .voice-students-student img {
+    width: 50%;
+    margin: 0 auto;
+  }
+  main .voice-students-student ul {
+    min-height: 0;
+  }
+  main .what_is_human_art_school {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  main .what_is_human_art_school-text p {
+    font-size: 1.3rem;
+  }
+  main .what_is_human_art_school:before {
+    top: -14.0rem;
+  }
+  main .what_is_human_art_school:after {
+    top: -12.0rem;
+  }
+  main .features {
+    padding-right: 2rem;
+  }
+  main .features-text h4 {
+    font-size: 1.6rem;
+  }
+  main .features-text p {
+    font-size: 1.3rem;
+  }
+  main .features-image ul li {
+    font-size: 1.6rem;
+  }
+  main .features:before {
+    top: -14.0rem;
+  }
+  main .features:after {
+    top: -12.0rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main .features-text h4 {
+    display: none;
+  }
+  main .features-image ul li {
+    font-size: 1.3rem;
+  }
+}

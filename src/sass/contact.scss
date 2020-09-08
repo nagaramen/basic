@@ -1,0 +1,247 @@
+@charset "UTF-8";
+@import "common.scss";
+
+main {
+  section.box {
+    h3 {
+      @include gothic;
+
+      font-size: $h3;
+      line-height: 4.8rem;
+
+      background: transparent;
+      color: $black;
+      padding: 0;
+      left: 0;
+      float: none;
+
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    div {
+      margin: auto;
+    }
+
+    .contact-form {
+      form {
+        .form-top {
+          width: 100%;
+          display: flex;
+
+          margin: $section-margin 0;
+          box-sizing: border-box;
+          justify-content: space-between;
+
+          .form-left, .form-right {
+            margin: 0 auto auto auto;
+            width: calc(100% - #{$margin} * 2);
+          }
+
+          .form-left {
+            margin-right: $margin;
+          }
+
+          .form-right {
+            margin-left: $margin;
+          }
+
+          label {
+            display: inline-block;
+            font-size: $p;
+            line-height: 4.0rem;
+            width: 8.0rem;
+          }
+
+          input[type="text"], input[type="tel"], input[type="email"] {
+            box-sizing: border-box;
+            font-size: $h4;
+            line-height: 1;
+            height: 4.0rem;
+            border: 0;
+            width: calc(100% - 8.0rem);
+            padding: 1.0rem;
+            margin-bottom: $margin;
+            border-radius: 0;
+            outline: none;
+
+            border-bottom: 0.1rem solid $gray;
+
+            &:focus {
+              border-color: $orange;
+            }
+
+            &::placeholder {
+              color: $gray;
+            }
+          }
+
+          .wpcf7-list-item {
+            display: block;
+            width: 100%;
+            margin-bottom: $margin;
+
+            label {
+              width: 100%;
+              height: 2.0rem;
+              line-height: 2.0rem;
+            }
+          }
+
+          .wpcf7-list-item-label {
+            display: inline-block;
+            font-size: $p;
+            line-height: 4.0rem;
+            width: 8.0rem;
+          }
+
+          input[type='checkbox'] {
+            opacity: 0;
+            position: absolute;
+            width: 2.222rem;
+            height: 2.222rem;
+            padding: 0;
+            margin: 0;
+            z-index: 99;
+            cursor: pointer;
+          }
+
+          input[type='checkbox'] + .wpcf7-list-item-label {
+            display: block;
+            font-size: $p;
+            line-height: 2.0rem;
+            position: relative;
+            padding-left: 3.5rem;
+            width: 100%;
+            margin-bottom: 2.0rem;
+            color: $black;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+          }
+
+          input[type='checkbox'] + .wpcf7-list-item-label::before {
+            content: "";
+            display: block;
+            width: 2.0rem;
+            height: 2.0rem;
+            border: 0.1rem solid $orange;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.6;
+            -webkit-transition: all .12s, border-color .08s;
+            transition: all .12s, border-color .08s;
+          }
+
+          input[type="checkbox"]:checked + .wpcf7-list-item-label::before {
+            width: 1.0rem;
+            top: -0.5rem;
+            left: 0.5rem;
+            border-radius: 0;
+            opacity: 1;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+
+          &:last-child {
+            margin-top: $margin * 2;
+            border: 0;
+          }
+
+          textarea {
+            width: 100%;
+            height: 40.0rem;
+            font-size: $h4;
+            line-height: 2;
+            padding: 1.0rem;
+            box-sizing: border-box;
+            border-radius: none;
+            border: 0.1rem solid $gray;
+            outline: none;
+            resize: none;
+
+            &:focus {
+              border-color: $orange;
+            }
+
+            &::placeholder {
+              color: $gray;
+            }
+          }
+        }
+
+        input[type='submit'] {
+          @include mincho;
+
+          display: block;
+          font-size: $h3;
+          line-height: 7.2rem;
+
+          margin: 0 auto;
+
+          background: $orange;
+          color: $white;
+          height: 7.2rem;
+          width: 100%;
+
+          text-align: center;
+          border-radius: 3.6rem;
+
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          border: 0;
+
+          z-index: 2;
+
+          transition: 0.5s;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+
+        .wpcf7-response-output {
+          text-align: center;
+          margin: $margin 0 0;
+          padding: $margin;
+          font-size: $h4;
+          border: 0.222rem solid $orange;
+          line-height: 2;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    section.box {
+      .contact-form {
+        form {
+          .form-top {
+            width: 100%;
+            display: block;
+
+            .form-left, .form-right {
+              width: 100%;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

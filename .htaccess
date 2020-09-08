@@ -1,0 +1,36 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+</IfModule>
+
+<ifModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{REQUEST_URI}  (?i)(.*)(\.jpe?g|\.png)$
+  RewriteCond %{DOCUMENT_ROOT}%1%2.webp -f
+  RewriteRule (?i)(.*)(\.jpe?g|\.png)$ %1$2\.webp [L,T=image/webp,R]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header append Vary Accept env=REDIRECT_accept
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
+
+# BEGIN WordPress
+# `BEGIN WordPress` から `END WordPress` までのディレクティブ (行) は
+# 動的に生成され、WordPress フィルターによってのみ修正が可能です。
+# これらのマーカー間にあるディレクティブへのいかなる変更も上書きされてしまいます。
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

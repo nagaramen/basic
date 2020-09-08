@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@import "common.scss";
+
+main {
+  section {
+    h1 {
+      font-size: $h1;
+      line-height: 2;
+      color: $orange;
+
+      text-align: center;
+    }
+
+    p {
+      font-size: $p;
+      line-height: 2;
+
+      text-align: center;
+    }
+  }
+}

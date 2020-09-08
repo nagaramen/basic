@@ -1,0 +1,699 @@
+@charset "UTF-8";
+@import "common.scss";
+
+main {
+  .main-header {
+    margin-bottom: $section-margin * 2;
+
+    &-title {
+      height: 24.0rem;
+
+      p {
+        padding-bottom: 0.8rem;
+      }
+
+      h1 {
+        bottom: 0;
+      }
+    }
+
+    .lead {
+      position: relative;
+      height: 22.0rem;
+
+      &-text {
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+
+        p {
+          width: calc(100% - #{$margin});
+          margin-right: $margin * 2;
+          padding: $margin;
+          background: $white;
+          font-size: $p;
+          line-height: 1.8;
+
+          @include shadow;
+        }
+      }
+
+      &-cv {
+        .cv-btn {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+
+          width: calc(50% - #{$margin});
+        }
+
+        a {
+          @include mincho;
+
+          position: absolute;
+          bottom: 0;
+          right: 0;
+
+          display: block;
+          font-size: 2.4rem;
+          line-height: 7.2rem;
+
+          background: $orange;
+          color: $white;
+          height: 7.2rem;
+          width: calc(50% - #{$margin});
+
+          text-align: center;
+          border-radius: 3.6rem;
+        }
+
+        p {
+          position: absolute;
+          bottom: -5.0rem;
+          right: 0;
+          width: 100%;
+
+          width: 30.0rem;
+          height: 45.0rem;
+
+          font-size: $h3;
+          line-height: 1.5;
+          text-align: center;
+          color: $white;
+
+          &:before {
+            content: "";
+            background: url(../img/balloon.svg) no-repeat center top;
+            width: 100%;
+            height: 100%;
+
+            background-size: contain;
+            position: absolute;
+            top: -12.0rem;
+            right: 0;
+
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+
+  .voice {
+    width: 100%;
+
+    background: url(../img/background-voice.svg) no-repeat;
+    background-size: contain;
+    background-position: left top;
+
+    h3 {
+      @include mincho;
+
+      font-size: $h2;
+      line-height: 2;
+      text-align: center;
+
+      margin-bottom: $margin * 2;
+
+      color: $orange;
+    }
+
+    p {
+      font-size: $h4;
+      line-height: 2;
+      text-indent: 1em;
+      text-align: center;
+
+      margin-bottom: $margin * 2;
+    }
+
+    &-students {
+      display: flex;
+      background: $white;
+      @include shadow;
+
+      &-student {
+        width: calc(100% / 3);
+        padding: $margin;
+
+        img {
+          width: 75%;
+          margin: 0 auto;
+        }
+
+        h4 {
+          font-size: $h4;
+          line-height: 1;
+          text-align: center;
+          margin: $margin 0;
+        }
+
+        p {
+          margin-bottom: 0;
+
+          &:last-child {
+            margin-bottom: $margin * 2;
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+
+          min-height: 13.5rem;
+          margin-bottom: $margin;
+
+          li {
+            width: 100%;
+
+            a {
+              display: block;
+              width: 100%;
+
+              font-size: $c;
+              line-height: 3.0rem;
+              text-align: center;
+
+              color: $white;
+              background: $gray;
+              border-radius: 1.5rem;
+
+              &.purple {
+                background: $purple;
+              }
+
+              &.cyan {
+                background: $cyan;
+              }
+
+              &.salmon {
+                background: $salmon;
+              }
+            }
+          }
+
+          li + li {
+            margin-top: 0.5rem;
+          }
+        }
+
+        p {
+          font-size: $p;
+          line-height: 2;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .what_is_human_art_school {
+    position: relative;
+
+    width: 100%;
+    padding-left: calc(100% / 3 + #{$margin});
+
+    &-text {
+      display: flex;
+      flex-direction : row-reverse;
+      align-items: flex-end;
+
+      margin-bottom: $section-margin;
+
+      h3 {
+        @include vertical-mincho;
+
+        font-size: $h2;
+        line-height: 1;
+
+        border-left: 0.2rem solid $orange;
+        padding-left: $p;
+        margin-left: $p;
+
+        color: $orange;
+      }
+
+      &-block {
+        width: calc(100% - 6.4rem);
+        padding-left: $p;
+        border-left: 0.2rem solid $orange;
+
+        p {
+          font-size: $p;
+          line-height: 2;
+          text-indent: 1em;
+        }
+      }
+    }
+
+    &-image {
+      display: flex;
+      height: auto;
+      align-items: flex-start;
+
+      background: $white;
+      @include shadow;
+
+      margin-bottom: $section-margin;
+
+      img {
+        width: 50%;
+        padding: $margin;
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+
+      height: 100%;
+      width: 144.0rem;
+      max-width: 100vw;
+      top: -7.0rem;
+      left: -22.0rem;
+      right: -22.0rem;
+      margin: 0 auto;
+      background: $pale-gradient;
+
+      -webkit-transform: skewY(-45deg) translateZ(-50px);
+              transform: skewY(-45deg) translateZ(-50px);
+      transform-origin: center;
+
+      z-index: -5;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+
+      height: 100%;
+      width: 144.0rem;
+      max-width: 100vw;
+      top: -5.0rem;
+      left: -22.0rem;
+      right: -22.0rem;
+      margin: 0 auto;
+      background: url(../img/background-what_is_human_art_school.jpg) no-repeat;
+      background-size: cover;
+      background-position: bottom;
+
+      -webkit-transform: skewY(-45deg) translateZ(-100px);;
+              transform: skewY(-45deg) translateZ(-100px);;
+      transform-origin: center;
+
+      z-index: -4;
+    }
+  }
+
+  .course {
+    background: url(../img/background-course.svg) no-repeat;
+    background-size: contain;
+    background-position: right top;
+  }
+
+  .features {
+    position: relative;
+
+    width: 100%;
+    padding-right: calc(100% / 3 + #{$margin});
+
+    &-text {
+      position: relative;
+
+      display: flex;
+      align-items: flex-end;
+
+      margin-bottom: $section-margin;
+
+      h3 {
+        @include vertical-mincho;
+
+        width: 8.0rem;
+
+        font-size: $h2;
+        line-height: 1;
+
+        order: 2;
+
+        border-right: 0.2rem solid $orange;
+        padding-right: $p;
+        margin-right: $p;
+
+        color: $orange;
+
+        .small {
+          @include gothic;
+
+          display: block;
+
+          margin-right: 0.8rem;
+
+          color: $black;
+          font-size: $h3;
+          line-height: 1;
+          writing-mode: vertical-rl;
+          font-feature-settings: initial;
+          text-align: right;
+        }
+      }
+
+      h4 {
+        position: absolute;
+
+        top: 0;
+        left: 9.2rem;
+
+        color: $black;
+        font-size: 2.0rem;
+        line-height: 2;
+      }
+
+      p {
+        order: 3;
+
+        width: calc(100% - 9.2rem);
+        display: block;
+
+        font-size: $p;
+        line-height: 2;
+        text-indent: 1em;
+
+        padding-right: $p;
+
+        border-right: 0.2rem solid $orange;
+      }
+    }
+
+    &-image {
+      position: relative;
+      width: 100%;
+      margin-bottom: $section-margin;
+
+      ul {
+        padding-top: 90%;
+        position: relative;
+
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+
+          width: 55%;
+          height: 45%;
+
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+
+          margin: 0 auto;
+
+          transform: translate(0, 55%);
+
+          background:
+          linear-gradient(to bottom right, transparent 50%, $orange 51%) no-repeat top left / 50% 100%,
+          linear-gradient(to bottom left, transparent 50%, $orange 51%) no-repeat top right / 50% 100%;
+        }
+
+        li {
+          position: absolute;
+
+          width: 45%;
+          height: 50%;
+
+          text-align: center;
+          font-size: $h3;
+          line-height: 1.8;
+
+          margin: 0 auto;
+
+          color: $white;
+
+          transform: translate(0, 25%);
+
+          &:nth-child(1) {
+            left: 0;
+            right: 0;
+            top: 0;
+          }
+
+          &:nth-child(2) {
+            left: 0;
+            bottom: 0;
+          }
+
+          &:nth-child(3) {
+            right: 0;
+            bottom: 0;
+          }
+
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            border-radius: 50%;
+            background: $cool-gradient;
+
+            transform: translate(0, -30%);
+
+            z-index: -1;
+          }
+        }
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+
+      height: 100%;
+      background-size: 100% auto;
+      width: 144.0rem;
+      max-width: 100vw;
+      top: -10.5rem;
+      left: -22.0rem;
+      right: -22.0rem;
+      margin: 0 auto;
+      background: $pale-gradient;
+
+      -webkit-transform: skewY(-135deg) translateZ(-200px);
+              transform: skewY(-135deg) translateZ(-200px);
+      transform-origin: center;
+
+      z-index: -3;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+
+      height: 100%;
+      width: 144.0rem;
+      max-width: 100vw;
+      top: -8.5rem;
+      left: -22.0rem;
+      right: -22.0rem;
+      margin: 0 auto;
+      background: url(../img/background-features.jpg) no-repeat;
+      background-size: cover;
+      background-position: bottom;
+
+      -webkit-transform: skewY(-135deg) translateZ(-150px);
+              transform: skewY(-135deg) translateZ(-150px);
+      transform-origin: center;
+
+      z-index: -2;
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  main {
+    .main-header {
+      .lead {
+        position: relative;
+        height: auto;
+        margin-top: 4.0rem;
+
+        &-text {
+          position: relative;
+          width: 100%;
+
+          p {
+            width: 100%;
+            margin-right: 0 auto;
+          }
+        }
+
+        &-cv {
+          position: relative;
+          width: 100%;
+          margin-top: 4.0rem;
+
+          p {
+            position: relative;
+            top: 12.0rem;
+            margin: 0 0 0 auto;
+          }
+
+          .cv-btn {
+            position: relative;
+
+            width: 100%;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+
+    /*
+    .features {
+      &-image {
+        ul {
+          li {
+            font-size: $h4;
+          }
+        }
+      }
+    }
+    */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    .main-header {
+      &-title {
+        height: 16.0rem;
+
+        p {
+          padding-bottom: 0.5rem;
+        }
+
+        h1 {
+          bottom: 0;
+        }
+      }
+
+      .lead {
+        &-cv {
+          p {
+            position: relative;
+            top: 7.0rem;
+            margin: 0 0 0 auto;
+
+            width: 20.0rem;
+            height: 30.0rem;
+
+            font-size: $p;
+            line-height: 1.8;
+            text-align: center;
+            color: $white;
+
+            &:before {
+              top: -7.0rem;
+            }
+          }
+        }
+      }
+    }
+
+    .voice {
+      &-students {
+        display: block;
+
+        &-student {
+          width: 100%;
+
+          img {
+            width: 50%;
+            margin: 0 auto;
+          }
+
+          ul {
+            min-height: 0;
+          }
+        }
+      }
+    }
+
+    .what_is_human_art_school {
+      padding-left: $margin;
+      padding-right: $margin;
+
+      &-text {
+        p {
+          font-size: $c;
+        }
+      }
+
+      &:before {
+        top: -14.0rem;
+      }
+
+      &:after {
+        top: -12.0rem;
+      }
+    }
+
+    .features {
+      padding-right: $margin;
+
+      &-text {
+        h4 {
+          font-size: $p;
+        }
+
+        p {
+          font-size: $c;
+        }
+      }
+
+      &-image {
+        ul {
+          li {
+            font-size: $p;
+          }
+        }
+      }
+
+      &:before {
+        top: -14.0rem;
+      }
+
+      &:after {
+        top: -12.0rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    .features {
+      &-text {
+        h4 {
+          display: none;
+        }
+      }
+
+      &-image {
+        ul {
+          li {
+            font-size: $c;
+          }
+        }
+      }
+    }
+  }
+}
