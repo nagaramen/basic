@@ -57,13 +57,13 @@ $pale-gradient: linear-gradient(90deg, $pink 0%, $light-orange 100%);
 }
 
 @mixin gothic {
-  font-family:  "游ゴシック", "Yu Gothic", YuGothic, "游ゴシック体", a-otf-futo-go-b101-pr6n, "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  font-family:  "游ゴシック", "Yu Gothic", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
   font-weight: 600;
   font-feature-settings: initial;
 }
 
 @mixin mincho {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, yu-mincho-pr6, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
   font-weight: 400;
   font-feature-settings: "palt";
 }
